@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/src"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择要复制的文件" />
+
+                <TextView
+                    android:id="@+id/showsrc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="要复制的文件" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/dest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择目标文件夹" />
+
+                <TextView
+                    android:id="@+id/showdest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="目标文件夹" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="clearDestFolder"
+                android:text="清空目标文件夹" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="clearConsole"
+                android:text="清空控制台" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/io_buffered_stream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startCopyFiles"
+                android:text="IOBufferedStream" />
+
+            <RadioButton
+                android:id="@+id/io_unbuffered_stream"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startCopyFiles"
+                android:text="IOUnBufferedStream" />
+
+            <RadioButton
+                android:id="@+id/channel_transfer_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startCopyFiles"
+                android:text="ChannelTransferTo" />
+
+            <RadioButton
+                android:id="@+id/channel_transfer_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startCopyFiles"
+                android:text="ChannelTransferFram" />
+
+            <RadioButton
+                android:id="@+id/channel_mapped_buffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startCopyFiles"
+                android:text="ChannelMappedBuffer" />
+
+            <RadioButton
+                android:id="@+id/channel_direct_buffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startCopyFiles"
+                android:text="ChanneldirectBuffer" />
+
+            <RadioButton
+                android:id="@+id/channel_non_direct_buffer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="startCopyFiles"
+                android:text="ChannelNonDirectBuffer" />
+        </RadioGroup>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" />
+
+        <TextView
+            android:id="@+id/console"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#dddddd"
+            android:gravity="bottom"
+            android:maxHeight="400dp"
+            android:minHeight="0dp"
+            android:scrollbars="vertical" />
+
+    </LinearLayout>
+
+</ScrollView>
